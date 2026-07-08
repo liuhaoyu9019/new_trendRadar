@@ -149,83 +149,91 @@
 
 [WORD_GROUPS]
 
-# ═══════════════════════════════════════════════════════════════
-#                         企业与品牌
-# ═══════════════════════════════════════════════════════════════
+# =========================
+# AI模型公司
+# =========================
 
-/胖东来|于东来/ => 胖东来
+[AI模型]
 
-/深度求索|幻方量化|梁文锋|\bDeepSeek\b/ => DeepSeek
+/OpenAI|ChatGPT|Sora|DALL-E|Sam Altman|GPT/ => OpenAI
 
-/华为|任正非|余承东|鸿蒙|海思|昇腾|鲲鹏|\bHUAWEI\b|\bHarmonyOS\b|\bHiSilicon\b/ => 华为
+/Anthropic|Claude/ => Claude
 
-/比亚迪|王传福|方程豹|腾势|仰望|弗迪|刀片电池|云辇|\bBYD\b|\bDenza\b|\bYangwang\b/ => 比亚迪
+/DeepSeek|深度求索|梁文锋/ => DeepSeek
 
-/大疆|汪滔|灵眸|如影|\bDJI\b|\bRoboMaster\b|\bMavic\b|\bZenmuse\b/ => 大疆
+/Gemini|DeepMind|Google AI/ => Gemini
 
-/宇树|王兴兴|\bUnitree\b/ => 宇树机器人
+/qwen|通义千问|千问/ => 通义千问
 
-/智元|灵犀|稚晖君|彭志辉|AgiBot/ => 智元机器人
-/众擎|EngineAI|赵同阳/ => 众擎机器人
+/文心一言|ERNIE/ => 文心一言
 
-/黑神话|冯骥/ => 黑神话悟空
-
-/影之刃零|梁其伟/ => 影之刃零
-
-/三体|流浪地球|刘慈欣|郭帆/ => 三体/流浪地球
-
-申奥
-
-/京东|刘强东|\bJD\b|\bJingdong\b/ => 京东
-
-/字节|张一鸣|梁汝波|抖音|\bByteDance\b|\bTikTok\b|\bDouyin\b|\bLark\b|\bCapCut\b/ => 字节跳动
-
-/腾讯|鹅厂|马化腾|微信|QQ|天美|阅文集团|微众银行|\bTencent\b|\bPony Ma\b|\bWeChat\b|\bLightSpeed\b|\bWeBank\b/ => 腾讯
-
-/qwen|minimax|glm/ => 国产开源模型
-
-/特斯拉|马斯克|\bTesla\b|\bElon Musk\b|\bCybertruck\b|\bModel 3\b|\bModel Y\b|\bModel S\b|\bModel X\b|\bFSD\b/ => 特斯拉
-
-/英伟达|黄仁勋|\bNVIDIA\b|\bGeForce\b|\bRTX\b|\bCUDA\b|\bJensen Huang\b/ => 英伟达
-/苏姿丰|锐龙|霄龙|\bAMD\b|\bRyzen\b|\bEPYC\b|\bRadeon\b|\bLisa Su\b/ => AMD
-
-/微软|\bMicrosoft\b|\bWindows\b|\bAzure\b|\bSatya Nadella\b|\bCopilot\b/ => 微软
-/谷歌|皮查伊|安卓|油管|\bGoogle\b|\bAlphabet\b|\bAndroid\b|\bChrome\b|\bYouTube\b|\bGemini\b|\bDeepMind\b|\bWaymo\b/ => 谷歌
-/库克|\biPhone\b|\biPad\b|\bMacBook\b|\biOS\b|\bVision Pro\b|\bAirPods\b|\bApple\b|\bTim Cook\b/ => 苹果
-
-/\bOpenAI\b|\bChatGPT\b|\bSora\b|\bDALL-E\b|\bSam Altman\b|\bGreg Brockman\b/ => OpenAI
-/\bAnthropic\b|\bClaude\b|\bDario Amodei\b/ => Claude
+/智谱|GLM/ => 智谱
 
 
-# ═══════════════════════════════════════════════════════════════
-#                         国家与地区
-# ═══════════════════════════════════════════════════════════════
+# =========================
+# AI技术
+# =========================
 
-[中国]
-国产
-中国
+[AI技术]
 
-[东亚]
-日本
-朝鲜
-韩国
+/(?<![a-zA-Z])AI(?![a-zA-Z])/ => AI
 
-[北美]
-美国
-加拿大
+人工智能
 
-[西欧]
-法国
-英国
+生成式AI
 
-/俄罗斯|俄国/ => 俄罗斯
+AIGC
 
-印度
+大模型
+
+多模态
+
+智能体
+
+AI Agent
+
+机器学习
+
+深度学习
+
+Transformer
 
 
-# ═══════════════════════════════════════════════════════════════
-#                         科技领域
-# ═══════════════════════════════════════════════════════════════
+# =========================
+# AI硬件
+# =========================
+
+[AI芯片]
+
+英伟达
+
+NVIDIA
+
+GPU
+
+CUDA
+
+芯片
+
+半导体
+
+算力
+
+
+# =========================
+# AI机器人
+
+[机器人]
+
+机器人
+
+具身智能
+
+机械狗
+
+自动驾驶
+
+无人驾驶
 
 [AI 相关]
 /(?<![a-zA-Z])ai(?![a-zA-Z])/
