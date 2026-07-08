@@ -701,6 +701,9 @@ class NewsAnalyzer:
         else:
             # === 关键词匹配策略（默认）===
             print("[筛选] 使用关键词匹配策略")
+            print(f"[筛选-调试] word_groups 数量: {len(word_groups)}")
+            for g in word_groups[:5]:
+                print(f"[筛选-调试]   词组: '{g.get('display_name') or g.get('group_key')}'")
             stats, total_titles = self.ctx.count_frequency(
                 data_source, word_groups, filter_words,
                 id_to_name, title_info, new_titles,

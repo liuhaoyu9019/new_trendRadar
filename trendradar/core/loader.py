@@ -336,6 +336,8 @@ def _load_filter_config(config_data: Dict) -> Dict:
 
     # 打印实际使用的筛选方式
     print(f"[配置] filter.method = {method}")
+    print(f"[配置-调试] frequency_words.txt 将被用于关键词匹配")
+    print(f"[配置-调试] 配置文件路径: config/config.yaml")
 
     return {
         "METHOD": method,  # "keyword" | "ai"
