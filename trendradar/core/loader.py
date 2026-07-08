@@ -332,18 +332,10 @@ def _load_filter_config(config_data: Dict) -> Dict:
     """加载筛选策略配置"""
     filter_cfg = config_data.get("filter", {})
 
-    # 环境变量兼容：AI_FILTER_ENABLED=true → method=ai
-    env_ai_filter = _get_env_bool("AI_FILTER_ENABLED")
-
     method = filter_cfg.get("method", "keyword")
-    if env_ai_filter is True:
-        method = "ai"
 
-    # 兼容旧配置：如果 ai_filter.enabled=true 且未显式设置 filter.method
-    if method == "keyword" and not filter_cfg.get("method"):
-        ai_filter = config_data.get("ai_filter", {})
-        if ai_filter.get("enabled", False):
-            method = "ai"
+    # 打印实际使用的筛选方式
+    print(f"[配置] filter.method = {method}")
 
     return {
         "METHOD": method,  # "keyword" | "ai"

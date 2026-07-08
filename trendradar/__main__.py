@@ -670,6 +670,7 @@ class NewsAnalyzer:
         """统一的分析流水线：数据处理 → 统计计算（关键词/AI筛选）→ AI分析 → HTML生成"""
 
         # 根据筛选策略选择数据处理方式
+        print(f"[调试] filter_method = '{self.filter_method}'")
         if self.filter_method == "ai":
             # === AI 筛选策略 ===
             print("[筛选] 使用 AI 智能筛选策略")
@@ -699,6 +700,7 @@ class NewsAnalyzer:
                 )
         else:
             # === 关键词匹配策略（默认）===
+            print("[筛选] 使用关键词匹配策略")
             stats, total_titles = self.ctx.count_frequency(
                 data_source, word_groups, filter_words,
                 id_to_name, title_info, new_titles,
