@@ -125,7 +125,15 @@ jobs:
 
       - name: Install dependencies
         if: success()
-        run: uv sync --frozen --no-dev --reinstall-package trendradar
+        run: uv sync --frozen --no-dev
+
+      - name: Install trendradar in editable mode
+        if: success()
+        run: uv pip install -e . --no-deps
+
+      - name: Verify code is from source
+        if: success()
+        run: python -c "import trendradar; print(f'trendradar path: {trendradar.__file__}')"
 
       - name: Verify required files
         if: success()
