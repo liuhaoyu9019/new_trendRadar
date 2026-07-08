@@ -120,10 +120,12 @@ jobs:
       - name: Install uv
         if: success()
         uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: false
 
       - name: Install dependencies
         if: success()
-        run: uv sync --frozen --no-dev
+        run: uv sync --frozen --no-dev --reinstall-package trendradar
 
       - name: Verify required files
         if: success()
