@@ -1,65 +1,96 @@
 # ═══════════════════════════════════════════════════════════════
 #                    TrendRadar 频率词配置文件
-#                         Version: 1.1.0
 # ═══════════════════════════════════════════════════════════════
+# 只推送 AI 相关新闻
 
-# 可视化配置编辑器地址: https://sansan0.github.io/TrendRadar/
-#
-# 凡是左侧有 # 的都是仅供阅读的说明性文字
-#
-# 这个文件用来设置你想关注的新闻关键词。
-# 系统会自动抓取包含这些关键词的热榜新闻推送给你。
-#
-# 文件分为两个区域：
-#   [GLOBAL_FILTER]  - 全局过滤区：排除不想看的内容
-#   [WORD_GROUPS]    - 词组定义区：设置想关注的关键词
-#
-# ═══════════════════════════════════════════════════════════════
+[GLOBAL_FILTER]
+# 标题党过滤
+震惊
+太可怕了
+竟然
+刚刚
+
 
 [WORD_GROUPS]
 
 # ======================
-# AI 模型公司
+# AI 模型与公司
 # ======================
 
-[AI模型]
+[OpenAI / ChatGPT / GPT]
 
-/OpenAI|ChatGPT|GPT|Sora|DALL-E|Sam Altman/ => OpenAI
+/OpenAI|ChatGPT|GPT-\d|GPT\s*\d|o1|o3|GPT\s*store/ => OpenAI / ChatGPT
 
-/Anthropic|Claude/ => Claude
+/(?<![a-zA-Z])Sora(?![a-zA-Z])|DALL-E/ => OpenAI 产品
+
+[Claude / Anthropic]
+
+/Claude|Anthropic/ => Claude / Anthropic
+
+[DeepSeek]
 
 /DeepSeek|深度求索|梁文锋/ => DeepSeek
 
-/Gemini|DeepMind/ => Gemini
+[Gemini]
 
-/qwen|通义千问|千问/ => 通义千问
+/Gemini|DeepMind/ => Gemini / DeepMind
 
-/文心一言|ERNIE/ => 文心一言
+[通义千问 / Qwen]
 
-/智谱|GLM/ => 智谱
+/qwen|通义千问|千问|阿里.*大模型/ => 通义千问
+
+[文心一言 / 百度AI]
+
+/文心一言|ERNIE|百度.*AI|百度.*大模型/ => 文心一言
+
+[智谱 / GLM]
+
+/智谱|GLM|ChatGLM/ => 智谱
+
+[Kimi / Moonshot]
+
+/Kimi|Moonshot|月之暗面|杨植麟/ => Kimi
+
+[字节跳动 / 豆包]
+
+/豆包|字节.*AI|字节.*大模型|火山引擎.*AI/ => 豆包 / 字节AI
+
+[MiniMax / 阶跃星辰]
+
+/MiniMax|阶跃星辰|稀宇/ => MiniMax
+
+[Grok / xAI]
+
+/Grok|xAI|马斯克.*AI/ => Grok / xAI
+
+[百川 / 零一万物]
+
+/百川智能|零一万物|李开复.*AI/ => 百川 / 零一万物
 
 
 # ======================
-# AI 技术
+# AI 技术与研究
 # ======================
 
-[AI技术]
-
-/(?<![a-zA-Z])AI(?![a-zA-Z])/ => AI
+[AI 大模型]
 
 人工智能
+
+大模型
+
+大语言模型
+
+LLM
+
+多模态
 
 生成式AI
 
 AIGC
 
-大模型
-
-多模态
+AI Agent
 
 智能体
-
-AI Agent
 
 机器学习
 
@@ -67,41 +98,131 @@ AI Agent
 
 Transformer
 
+强化学习
 
-# ======================
-# AI 硬件
-# ======================
+RLHF
 
-[AI芯片]
+提示工程
 
-英伟达
+RAG
 
-NVIDIA
+检索增强
 
-GPU
+上下文窗口
 
-CUDA
+推理模型
 
-算力
+思维链
 
-AI芯片
-
-半导体
+预训练
 
 
 # ======================
-# AI机器人
+# AI 基础设施与算力
 # ======================
 
-[机器人]
+[AI 算力与芯片]
 
-机器人
+/英伟达|NVIDIA|H100|H200|B100|B200|Blackwell|Hopper/ => 英伟达
 
-具身智能
+/GPU|CUDA/ => GPU / CUDA
 
-人形机器人
+/HBM\d|HBM\s*\d|高带宽内存/ => HBM
+
+/AI.*芯片|AI.*算力|智算中心|算力中心/ => AI 芯片 / 算力
+
+/昇腾|海思|华为.*芯片/ => 华为昇腾
+
+/AI.*服务器/ => AI 服务器
+
+/推理成本|训练成本|算力成本/ => AI 成本
+
+/AMD.*AI|MI300|MI400/ => AMD AI
+
+
+# ======================
+# AI 应用与产品
+# ======================
+
+[AI 编程]
+
+/Copilot|Cursor|Codex|AI.*编程|AI.*代码|Devin/ => AI 编程
+
+[AI 搜索]
+
+/AI.*搜索|Perplexity|AI.*问答/ => AI 搜索
+
+[AI 视频与图像]
+
+/AI.*视频|AI.*生图|Sora|Runway|Pika|Midjourney|Stable\s*Diffusion/ => AI 视频/图像
+
+[AI 硬件产品]
+
+/AI.*手机|AI.*PC|AI.*眼镜|AI.*耳机|AI.*音箱/ => AI 硬件
+
+/AI.*pin|Rabbit.*R1|Humane/ => AI 设备
+
+[AI 行业应用]
+
+/AI.*医疗|AI.*制药|AI.*诊断/ => AI 医疗
+
+/AI.*教育|AI.*金融|AI.*安全|AI.*客服/ => AI 行业应用
+
+/AI.*招聘|AI.*HR|AI.*法务/ => AI 企业服务
+
+
+# ======================
+# AI 公司与行业动态
+# ======================
+
+[AI 公司动态]
+
+/OpenAI.*融资|OpenAI.*估值|OpenAI.*上市|OpenAI.*收购/ => OpenAI 动态
+
+/Anthropic.*融资|Anthropic.*估值/ => Anthropic 动态
+
+/AI.*融资|AI.*估值|AI.*IPO|AI.*上市/ => AI 投融资
+
+/AI.*监管|AI.*立法|AI.*法案|AI.*政策/ => AI 监管
+
+/AI.*安全|AI.*对齐|AI.*伦理/ => AI 安全
+
+/AI.*版权|AI.*侵权/ => AI 版权
+
+[AI 行业报告]
+
+/AI.*报告|AI.*预测|AI.*趋势|AI.*展望|AI.*白皮书/ => AI 行业研究
+
+/Gartner.*AI|IDC.*AI|McKinsey.*AI/ => AI 行业分析
+
+
+# ======================
+# AI 机器人 / 具身智能
+# ======================
+
+[机器人 / 具身智能]
+
+/机器人|机械狗|四足|人形|具身智能/ => 机器人
+
+/Figure\s*AI|特斯拉.*机器人|Optimus|擎天柱/ => 人形机器人
+
+/宇树|智元|众擎|大疆.*机器人|优必选/ => 中国机器人
 
 自动驾驶
 
-无人驾驶
-生产力
+
+# ======================
+# 中国科技AI公司
+# ======================
+
+[华为 AI]
+
+/华为.*AI|华为.*大模型|华为.*智驾|华为.*昇腾|鸿蒙.*AI|华为.*盘古/ => 华为 AI
+
+[腾讯 AI]
+
+/腾讯.*AI|腾讯.*大模型|混元/ => 腾讯 AI
+
+[阿里 AI]
+
+/阿里.*AI|阿里.*大模型|通义/ => 阿里 AI
