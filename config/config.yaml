@@ -200,8 +200,8 @@ ai_filter:
   # 自定义文件放入 config/custom/ai/ 目录，然后指定文件名：
   # interests_file: "finance.txt"    # → 加载 config/custom/ai/finance.txt
 
-  reclassify_threshold: 0.6              # 全量重分类触发阈值（0~1）
-                                          # 越低越倾向全量重分类（更准但更耗 token）
+  reclassify_threshold: 0.0              # 全量重分类触发阈值（0~1）
+                                          # 0.0=兴趣文件变更时强制全量重分类，彻底清除旧标签
                                           # 越高越倾向增量更新（更省但可能不够新）
 
   # 以下提示词模板一般无需修改（不建议动）
